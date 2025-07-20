@@ -1,5 +1,7 @@
 package org.example.lesson_1
 
+const val SECONDS_PER_MINUTE = 60
+
 fun main() {
 
     val secondsInSpace = 6480
@@ -8,9 +10,11 @@ fun main() {
 
 }
 
-fun getFormattedTime(seconds:Int): String {
-    val hours = seconds / 3600
-    val minutes = (seconds % 3600) / 60
-    val seconds = seconds % 60
-    return String.format("%02d:%02d:%02d", hours, minutes, seconds)
+fun getFormattedTime(totalSeconds:Int): String {
+    val secondsPerHour = SECONDS_PER_MINUTE * 60
+    val hours = totalSeconds / secondsPerHour
+    val minutes = (totalSeconds % secondsPerHour) / 60
+    val seconds = totalSeconds % 60
+    return "%02d:%02d:%02d".format(hours, minutes, seconds)
+
 }
