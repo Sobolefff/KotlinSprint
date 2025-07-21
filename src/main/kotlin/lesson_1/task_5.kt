@@ -11,10 +11,10 @@ fun main() {
 }
 
 fun getFormattedTime(totalSeconds:Int): String {
-    val secondsPerHour = SECONDS_PER_MINUTE * 60
+    val secondsPerHour = SECONDS_PER_MINUTE * SECONDS_PER_MINUTE
     val hours = totalSeconds / secondsPerHour
-    val minutes = (totalSeconds % secondsPerHour) / 60
-    val seconds = totalSeconds % 60
+    val minutes = (totalSeconds % secondsPerHour) / SECONDS_PER_MINUTE
+    val seconds = totalSeconds % SECONDS_PER_MINUTE
     return "%02d:%02d:%02d".format(hours, minutes, seconds)
 
 }
