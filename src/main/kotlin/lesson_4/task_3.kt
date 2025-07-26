@@ -23,6 +23,12 @@ fun main() {
 }
 
 fun isFavorableForLegumes(
-    sunny: Boolean, tent: Boolean, humidity: Int, season: String
+    sunny: Boolean,
+    tent: Boolean,
+    humidity: Int,
+    season: String
 ) =
-    sunny == SUNNY_FOR_LEGUMES && tent == TENT_FOR_LEGUMES && humidity == HUMIDITY_FOR_LEGUMES && season == SEASON_FOR_LEGUMES
+    sunny == SUNNY_FOR_LEGUMES &&
+            tent == TENT_FOR_LEGUMES &&
+            humidity == HUMIDITY_FOR_LEGUMES &&
+            season == SEASON_FOR_LEGUMES
