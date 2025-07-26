@@ -4,8 +4,8 @@ fun main() {
 
     val number = 6
 
-    for (i in 1..10) {
-        println("6 x $i = ${number * i}")
-    }
+        println(
+            (1..10).joinToString("\n") {"$number * $it = ${number * it}" }
+        )
 
 }
