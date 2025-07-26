@@ -12,8 +12,17 @@ fun main() {
     val humidityToday = 20
     val currentSeason = "Зима"
 
-    println("Благоприятные ли условия сейчас для роста бобовых? ${isFavorableForLegumes(sunnyToday, tentIsOpenToday, humidityToday, currentSeason)}")
+    println(
+        "Благоприятные ли условия сейчас для роста бобовых? ${
+            isFavorableForLegumes(
+                sunnyToday, tentIsOpenToday, humidityToday, currentSeason
+            )
+        }"
+    )
 
 }
 
-fun isFavorableForLegumes(sunny: Boolean, tent: Boolean, humidity: Int, season: String) = sunny == SUNNY_FOR_LEGUMES && tent == TENT_FOR_LEGUMES && humidity == HUMIDITY_FOR_LEGUMES && season == SEASON_FOR_LEGUMES
+fun isFavorableForLegumes(
+    sunny: Boolean, tent: Boolean, humidity: Int, season: String
+) =
+    sunny == SUNNY_FOR_LEGUMES && tent == TENT_FOR_LEGUMES && humidity == HUMIDITY_FOR_LEGUMES && season == SEASON_FOR_LEGUMES
