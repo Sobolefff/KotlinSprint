@@ -23,11 +23,10 @@ fun main() {
 
     println(
         "Корабль допущен к долгосрочному плаванию: ${
-            (currentDamage == DAMAGE && currentCrew in MIN_CREW..MAX_CREW && currentFoodBoxesValue > MIN_FOOD_BOXES_VALUE) || (currentCrew ==70 && currentWeather == WEATHER_GOOD && currentFoodBoxesValue >= MIN_FOOD_BOXES_VALUE)
+            (currentDamage == DAMAGE && currentCrew in MIN_CREW..MAX_CREW && currentFoodBoxesValue > MIN_FOOD_BOXES_VALUE)
+                    || (currentCrew == 70 && currentWeather == WEATHER_GOOD && currentFoodBoxesValue >= MIN_FOOD_BOXES_VALUE)
         }"
     )
-
-
 
 
 }
