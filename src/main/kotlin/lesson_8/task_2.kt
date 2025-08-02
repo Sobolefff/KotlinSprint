@@ -9,6 +9,7 @@ fun main() {
 
     for (i in soup) {
         if (i == ingredient) found = true
+        break
     }
 
     if (found)
