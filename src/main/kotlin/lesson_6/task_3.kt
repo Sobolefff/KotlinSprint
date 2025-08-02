@@ -7,6 +7,7 @@ fun main() {
     println("Таймер включен.")
 
     while (timerTime > 0) {
+
         println("Осталось ${timerTime--} секунд.")
         Thread.sleep(MS_IN_SEC)
     }
