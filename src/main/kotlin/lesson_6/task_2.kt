@@ -1,6 +1,6 @@
 package org.example.lesson_6
 
-const val MS_IN_SEC = 1000
+const val MS_IN_SEC: Long = 1000L
 
 fun main() {
 
