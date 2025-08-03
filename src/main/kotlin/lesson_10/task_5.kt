@@ -17,7 +17,7 @@ fun main() {
     if (token != null) {
         println("Добро пожаловать в интернет-магазин")
         println("Ваш токен: $token")
-        println("Ваша корзина: ${getCart(token)}")
+        println("Ваша корзина: ${getCart(token).joinToString(", ")}")
     } else {
         println("Неверный логин или пароль")
     }
@@ -26,33 +26,26 @@ fun main() {
 
 fun authorizeUser(login: String, password: String): String? {
     return if (LOGIN == login && PASSWORD == password) {
-        val token = getToken()
-        token
+        getToken()
     } else null
 }
 
 fun getToken(): String {
 
-    val lowerChars = ('a'..'z').toList()
-    val upperChars = ('A'..'Z').toList()
-    val digits = ('0'..'9').toList()
+    val lowerChars = ('a'..'z')
+    val upperChars = ('A'..'Z')
+    val digits = ('0'..'9')
     val allChars = lowerChars + upperChars + digits
-    val stringBuild = StringBuilder()
+    val token = mutableListOf<Char>()
 
-    stringBuild.append(lowerChars.random())
-    stringBuild.append(upperChars.random())
-    stringBuild.append(digits.random())
+    token.add(lowerChars.random())
+    token.add(upperChars.random())
+    token.add(digits.random())
 
-    repeat(TOKEN_LENGTH - 3) { stringBuild.append(allChars.random()) }
+    repeat(TOKEN_LENGTH - 3) { token.add(allChars.random()) }
 
-    return stringBuild.toList().shuffled().joinToString("")
-
-}
-
-fun getCart(token: String): String {
-
-    val cartStorage = mutableMapOf<String, List<String>>()
-    cartStorage[token] = listOf("телефон", "ноутбук", "телевизор")
-    return cartStorage[token]?.joinToString(", ") ?: ""
+    return token.shuffled().joinToString("")
 
 }
+
+fun getCart(token: String): List<String> = listOf("телефон", "ноутбук", "телевизор")
