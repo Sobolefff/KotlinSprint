@@ -2,16 +2,25 @@ package org.example.lesson_10
 
 fun main() {
 
+    var playerWinsCounter = 0
+
     while (true) {
 
         val playerNumber = getRandomNum()
         val computerNumber = getRandomNum()
+        val result = playRound(playerNumber, computerNumber)
 
-        println(playRound(playerNumber, computerNumber))
+        if (result == "Победило человечество") playerWinsCounter++
+
+        println(result)
+
         println("Хотите сыграть еще раз? (да/нет)")
 
         if (readln().lowercase() == "да") continue
-        else break
+        else {
+            println("Игра закончена. Человек победил $playerWinsCounter раз")
+            break
+        }
 
     }
 
