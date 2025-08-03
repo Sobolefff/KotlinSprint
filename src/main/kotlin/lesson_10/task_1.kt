@@ -17,6 +17,4 @@ fun main() {
 
 }
 
-fun getRandomNumber(): Int {
-    return (1..9).random()
-}
+fun getRandomNumber(): Int = (1..6).random()
