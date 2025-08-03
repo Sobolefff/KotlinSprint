@@ -4,8 +4,7 @@ fun main() {
 
     var playerWinsCounter = 0
 
-    while (true) {
-
+    do {
         val playerNumber = getRandomNum()
         val computerNumber = getRandomNum()
         val result = playRound(playerNumber, computerNumber)
@@ -16,15 +15,12 @@ fun main() {
 
         println("Хотите сыграть еще раз? (да/нет)")
 
-        if (readln().lowercase() == "да") continue
-        else {
-            println("Игра закончена. Человек победил $playerWinsCounter раз")
-            break
-        }
+    } while (readln().lowercase() == "да")
 
-    }
+    println("Игра закончена. Человек победил $playerWinsCounter раз")
 
 }
+
 
 fun getRandomNum(): Int {
 
@@ -32,7 +28,7 @@ fun getRandomNum(): Int {
 
 }
 
-fun playRound(playerNumber: Int, computerNumber: Int ): String {
+fun playRound(playerNumber: Int, computerNumber: Int): String {
 
     println("Человеку выпало число $playerNumber")
     println("Компьютеру выпало число $computerNumber")
