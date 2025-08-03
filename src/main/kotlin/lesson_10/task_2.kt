@@ -6,20 +6,17 @@ fun main() {
     print("Введите логин: ")
     val login = readln()
 
-    if (validateLength(login.length)) {
+    if (!validateLength(login)) {
         println("Логин слишком короткий")
     } else {
         print("Введите пароль: ")
         val password = readln()
 
-        if (validateLength(password.length)) {
+        if (!validateLength(password)) {
             println("Пароль слишком короткий")
-        }
+        } else println("Пользователь зарегистрирован")
     }
-    println("Пользователь зарегистрирован")
 
 }
 
-fun validateLength(length: Int): Boolean {
-    return length < 4
-}
+fun validateLength(input: String): Boolean = input.length >= 4
