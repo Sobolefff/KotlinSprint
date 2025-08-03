@@ -10,16 +10,14 @@ fun main() {
 
 fun getPassword(length: Int): String {
 
-    val digits = ('0'..'9').toList()
-    val symbols = listOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ' ').toList()
-    val allChars = digits + symbols
-    val stringBuild = StringBuilder()
+    val digits = ('0'..'9')
+    val symbols = (' '..'/')
 
-    stringBuild.append(digits.random())
-    stringBuild.append(symbols.random())
-
-    repeat(length - 2) { stringBuild.append(allChars.random()) }
-
-    return stringBuild.toList().shuffled().joinToString("")
+    return (1..length)
+        .map {
+            if (it % 2 == 0) symbols.random()
+            else digits.random()
+        }
+        .joinToString("")
 
 }
