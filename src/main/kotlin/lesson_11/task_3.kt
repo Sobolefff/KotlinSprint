@@ -6,7 +6,7 @@ package org.example.lesson_11
 data class Room(
     val cover: String,
     val title: String,
-    var usersList: MutableList<User>
+    var usersList: MutableList<User>,
 ) {
 
     fun addUser(user: User) = usersList.add(user)
@@ -20,7 +20,7 @@ data class Room(
 data class User(
     val avatar: String,
     val nickName: String,
-    var status: UserStatus
+    var status: UserStatus,
 ) {
     override fun toString(): String {
         return "User(avatar=$avatar, nickName=$nickName, status=${status.label})"
@@ -54,7 +54,7 @@ fun main() {
     val room = Room(
         cover = "https://i.ytimg.com/vi/568q0T22j0s/maxresdefault.jpg",
         title = "Мой первый чат",
-        usersList = mutableListOf()
+        usersList = mutableListOf(),
     )
 
     room.addUser(user1)
