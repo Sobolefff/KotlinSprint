@@ -1,6 +1,6 @@
 package org.example.lesson_11
 
-class User(
+class User1(
     val id: Int,
     val login: String,
     val password: String,
@@ -10,13 +10,13 @@ class User(
 
 fun main() {
 
-    val user1 = User(
+    val user1 = User1(
         id = 1,
         login = "Alex",
         password = "123",
         email = "alex@gmail.com",
     )
-    val user2 = User(
+    val user2 = User1(
         id = 2,
         login = "Bob",
         password = "123",
