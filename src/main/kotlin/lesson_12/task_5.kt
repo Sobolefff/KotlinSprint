@@ -2,18 +2,12 @@ package org.example.lesson_12
 
 const val CELSIUS_ZERO_KELVIN = 273
 
-class WeatherInKelvin(dayKelvinTemp: Int, nightKelvinTemp: Int, isRainy: Boolean) {
+class WeatherInKelvin(dayKelvinTemp: Int, nightKelvinTemp: Int, val isRainy: Boolean) {
 
-    val dayTemperature: Int
-    val nightTemperature: Int
-    val isRainy: Boolean
+    val dayTemperature: Int = dayKelvinTemp - CELSIUS_ZERO_KELVIN
+    val nightTemperature: Int = nightKelvinTemp - CELSIUS_ZERO_KELVIN
 
     init {
-
-        dayTemperature = dayKelvinTemp - CELSIUS_ZERO_KELVIN
-        nightTemperature = nightKelvinTemp - CELSIUS_ZERO_KELVIN
-        this.isRainy = isRainy
-
         println("Днём: $dayTemperature°C, ночью: $nightTemperature°C, осадки: ${if (isRainy) "да" else "нет"}")
     }
 
