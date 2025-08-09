@@ -1,6 +1,6 @@
 package org.example.lesson_13
 
-class PhoneBook (
+class Contact(
     val name: String,
     val phone: Long,
     val companyName: String?,
