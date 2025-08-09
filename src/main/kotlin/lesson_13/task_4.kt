@@ -24,7 +24,8 @@ fun main() {
             continue
         } else {
             println("Введите название компании: ")
-            val companyName = readln()
+            val companyName = readln().ifEmpty { null }
+
             phonesBook.add(Contact(name, phone, companyName))
             println("Контакт успешно добавлен")
         }
