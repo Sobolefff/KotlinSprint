@@ -15,6 +15,7 @@ open class Liner (
             Passengers capacity: $passengersCapacity
             Ice breaker: $iceBreaker
             """.trimIndent())
+        println()
     }
 }
 
