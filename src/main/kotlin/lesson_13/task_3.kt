@@ -1,6 +1,6 @@
 package org.example.lesson_13
 
-class ContactBook (
+class Contact3(
     private val name: String,
     private val phone: Long,
     val companyName: String? = null,
@@ -12,14 +12,13 @@ class ContactBook (
 
 fun main() {
     val phonesBook = listOf(
-        ContactBook("Ivan", 1234567890, "Google"),
-        ContactBook("Petr", 9876543210),
-        ContactBook("Sidor", 1111111111),
-        ContactBook("Vasya", 2222222222, "Mail.ru"),
-        ContactBook("Kolya", 3333333333, "null")
+        Contact3("Ivan", 1234567890, "Google"),
+        Contact3("Petr", 9876543210),
+        Contact3("Sidor", 1111111111),
+        Contact3("Vasya", 2222222222, "Mail.ru"),
+        Contact3("Kolya", 3333333333, "null")
     )
     val companies = phonesBook.mapNotNull { it.companyName }
         .distinct()
-        .filter { it != "null" }
     println("Компании в телефонной книге:\n${companies.joinToString("\n")}")
 }
