@@ -32,6 +32,6 @@ fun main() {
     val satellitesQuantity = planetMars.satellites.size
     println("Планета ${planetMars.name} имеет " +
             "$satellitesQuantity спутника: " +
-            "${planetMars.satellites.joinToString(", ") { it.name }}"
+            planetMars.satellites.joinToString(", ") { it.name }
     )
 }
