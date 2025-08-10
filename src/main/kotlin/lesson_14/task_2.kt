@@ -1,6 +1,6 @@
 package org.example.lesson_14
 
-open class Liner1 (
+open class Liner1(
     val name: String,
     val speed: Int = 10,
     val cargoCapacity: Int = 100,
@@ -25,7 +25,7 @@ open class Liner1 (
 
 }
 
-class IceBreaker1 (
+class IceBreaker1(
     name: String,
 ) : Liner1(name, speed = 7, cargoCapacity = 70, passengersCapacity = 100, iceBreaker = true) {
     override fun loadingMethod() {
@@ -33,7 +33,7 @@ class IceBreaker1 (
     }
 }
 
-class CargoShip1 (
+class CargoShip1(
     name: String,
 ) : Liner1(name, speed = 8, cargoCapacity = 1000, passengersCapacity = 200, iceBreaker = false) {
     override fun loadingMethod() {
