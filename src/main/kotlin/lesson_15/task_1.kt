@@ -1,25 +1,27 @@
 package org.example.lesson_15
 
-abstract class Animal : Movable {
-    abstract val name: String
-}
-
 class Fish(
-    override val name: String,
-) : Animal() {
-    override fun moveMethod() {
+    val name: String,
+) : Swimming {
+    override fun swim() {
         println("$name плавает")
     }
 }
 
-class Bird(override val name: String) : Animal() {
-    override fun moveMethod() {
+class Bird(
+    val name: String,
+) : Flight {
+    override fun flying() {
         println("$name летит")
     }
 }
 
-interface Movable {
-    fun moveMethod()
+interface Flight {
+    fun flying()
+}
+
+interface Swimming {
+    fun swim()
 }
 
 
@@ -29,8 +31,8 @@ fun main() {
     val crucian = Fish("Карась")
     val duck = Bird("Утка")
 
-    seagull.moveMethod()
-    crucian.moveMethod()
-    duck.moveMethod()
+    seagull.flying()
+    crucian.swim()
+    duck.flying()
 
 }
