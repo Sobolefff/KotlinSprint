@@ -1,6 +1,6 @@
 package org.example.lesson_15
 
-class Fish(
+class Crucian(
     val name: String,
 ) : Swimming {
     override fun swim() {
@@ -8,11 +8,23 @@ class Fish(
     }
 }
 
-class Bird(
+class Seagull(
     val name: String,
 ) : Flight {
     override fun flying() {
         println("$name летит")
+    }
+}
+
+class Duck(
+    val name: String,
+) : Flight, Swimming {
+    override fun flying() {
+        println("$name летит")
+    }
+
+    override fun swim() {
+        println("$name плавает")
     }
 }
 
@@ -27,12 +39,13 @@ interface Swimming {
 
 fun main() {
 
-    val seagull = Bird("Чайка")
-    val crucian = Fish("Карась")
-    val duck = Bird("Утка")
+    val seagull = Seagull("Чайка")
+    val crucian = Crucian("Карась")
+    val duck = Duck("Утка")
 
     seagull.flying()
     crucian.swim()
     duck.flying()
+    duck.swim()
 
 }
